@@ -36,6 +36,12 @@ const BlockCheckbox = {
           'https://gw.alipayobjects.com/zos/antfincdn/URETY8%24STp/KDNDBbriJhLwuqMoxcAr.svg',
         title: i18n('app.setting.topmenu'),
       },
+      {
+        key: 'mix',
+        url:
+          'https://gw.alipayobjects.com/zos/antfincdn/URETY8%24STp/KDNDBbriJhLwuqMoxcAr.svg',
+        title: i18n('app.setting.mix'),
+      },
     ]
 
     const handleChange = (key) => {

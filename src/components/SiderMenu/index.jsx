@@ -15,9 +15,11 @@ const SiderMenuWrapper = {
     const {
       layout,
       isMobile,
-      collapsed
+      collapsed,
+      theme
     } = this
     const isTopMenu = layout === 'topmenu'
+    const isMix = layout === 'mix'
     const handleCollapse = (e) => {
       this.$emit('collapse', true)
     }
@@ -34,11 +36,34 @@ const SiderMenuWrapper = {
           height: '100vh'
         }}
       >
-        <SiderMenu {...{ props: {...this.$props, collapsed: isMobile ? false : collapsed} }} />
+        <SiderMenu {...{ props: {...this.$props, menus:this.siderMenus, collapsed: isMobile ? false : collapsed} }} />
       </Drawer>
-    ) : !isTopMenu && (
-      <SiderMenu class="ant-pro-sider-menu" {...{ props: this.$props }} />
+    ) : !isTopMenu &&(
+      <SiderMenu class="ant-pro-sider-menu" {...{ props: {...this.$props,menus:this.siderMenus,theme:isMix?'light':theme} }} />
     )
+  },
+  computed:{
+    siderMenus(){
+      console.log('SiderMenuWrapper',this.topMenu)
+      if(this.layout==='mix'){
+        if(!this.topMenu){
+          return []
+        }
+        const menu = this.menus.find(i=> i.path ===this.topMenu.path || i.path ===this.topMenu.key)
+        if(menu && menu.children){
+          return menu.children
+        }else{
+          return []
+        }
+      }else{
+        return this.menus
+      }
+    }
+  },
+  watch:{
+    topMenu(val){
+      console.log(val)
+    }
   }
 }
 

@@ -24,7 +24,7 @@ export const LayoutSettingProps = {
   contentWidth: PropTypes.oneOf(['Fluid', 'Fixed']).def('Fluid'),
   fixedHeader: PropTypes.bool,
   fixSiderbar: PropTypes.bool,
-  layout: PropTypes.oneOf(['sidemenu', 'topmenu']),
+  layout: PropTypes.oneOf(['sidemenu', 'topmenu','mix']),
 
   i18nRender: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]).def(false),
 }

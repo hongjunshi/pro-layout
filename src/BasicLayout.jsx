@@ -25,6 +25,7 @@ export const BasicLayoutProps = {
   mediaQuery: PropTypes.object.def({}),
   handleMediaQuery: PropTypes.func,
   footerRender: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]).def(undefined),
+  topMenu: PropTypes.object.def(null)
 }
 
 const MediaQueryEnum = {
@@ -63,11 +64,11 @@ const getPaddingLeft = (
   return 0
 }
 
-const headerRender = (h, props) => {
+const headerRender = (h, props,listeners) => {
   if (props.headerRender === false) {
     return null
   }
-  return <HeaderView { ...{ props } } />
+  return <HeaderView { ...{ props,on:listeners } } />
 }
 
 const defaultI18nRender = (key) => key
@@ -88,9 +89,9 @@ const BasicLayout = {
       handleCollapse,
       siderWidth,
       fixSiderbar,
-      i18nRender = defaultI18nRender
+      i18nRender = defaultI18nRender,
+      topMenu
     } = props
-
     const footerRender = getComponentFromProp(content, 'footerRender')
     const rightContentRender = getComponentFromProp(content, 'rightContentRender')
     const collapsedButtonRender = getComponentFromProp(content, 'collapsedButtonRender')
@@ -100,6 +101,7 @@ const BasicLayout = {
     const menuRender = getComponentFromProp(content, 'menuRender')
 
     const isTopMenu = layout === 'topmenu'
+    const isMix = layout === 'mix'
     const hasSiderMenu = !isTopMenu
     // If it is a fix menu, calculate padding
     // don't need padding in phone mode
@@ -115,6 +117,9 @@ const BasicLayout = {
       headerContentRender,
       menuRender
     }
+    const listeners ={
+      'top-menu-select': content.listeners['top-menu-select'] ? content.listeners['top-menu-select']:()=>{}
+    }
 
     return (
       <ConfigProvider i18nRender={i18nRender} contentWidth={props.contentWidth} breadcrumbRender={breadcrumbRender}>
@@ -122,6 +127,7 @@ const BasicLayout = {
           <Layout class={{
             'ant-pro-basicLayout': true,
             'ant-pro-topmenu': isTopMenu,
+            'ant-pro-mix': isMix,
             ...mediaQuery
           }}>
             <SiderMenuWrapper
@@ -138,7 +144,7 @@ const BasicLayout = {
               {headerRender(h, {
                 ...cdProps,
                 mode: 'horizontal',
-              })}
+              },listeners)}
               <WrapContent class="ant-pro-basicLayout-content" contentWidth={props.contentWidth}>
                 {children}
               </WrapContent>

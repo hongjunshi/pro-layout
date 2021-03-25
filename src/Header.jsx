@@ -27,17 +27,19 @@ export const HeaderViewProps = {
 }
 
 
-const renderContent = (h, props) => {
+const renderContent = (h, props,listeners ) => {
   const isTop = props.layout === 'topmenu'
+  const isMix = props.layout === 'mix'
   const maxWidth = 1200 - 280 - 120
   const contentWidth = props.contentWidth === 'Fixed'
   const baseCls = 'ant-pro-top-nav-header'
   const { logo, title, theme, isMobile, headerRender, rightContentRender, menuRender, menuHeaderRender } = props
+
   const rightContentProps = { theme, isTop, isMobile }
   let defaultDom = <GlobalHeader {...{ props: props }} />
-  if (isTop && !isMobile) {
+  if ((isTop || isMix) && !isMobile) {
     defaultDom = (
-      <div class={[baseCls, theme]}>
+      <div class={[baseCls, isMix?'dark':theme]}>
         <div class={[`${baseCls}-main`, contentWidth ? 'wide' : '']}>
           {menuHeaderRender && (
             <div class={`${baseCls}-left`}>
@@ -47,7 +49,7 @@ const renderContent = (h, props) => {
             </div>
           )}
           <div class={`${baseCls}-menu`} style={{ maxWidth: `${maxWidth}px`, flex: 1 }}>
-            {menuRender && (isFun(menuRender) && menuRender(h, props) || menuRender) || (<BaseMenu {...{ props: props }} />) }
+            {menuRender && (isFun(menuRender) && menuRender(h, props) || menuRender) || (<BaseMenu {...{ props: {...props,theme:isMix?'dark':theme},on:listeners }} />) }
           </div>
           {isFun(rightContentRender) && rightContentRender(h, rightContentProps) || rightContentRender}
         </div>
@@ -74,37 +76,58 @@ const HeaderView = {
       autoHideHeader,
       hasSiderMenu,
     } = this.$props
-    const props = this.$props
+    const props = {...this.$props,menus:this.headerMenus,layout:layout}
     const isTop = layout === 'topmenu'
+    const isMix = layout === 'mix'
 
     const needSettingWidth = fixedHeader && hasSiderMenu && !isTop && !isMobile
 
     const className = {
       'ant-pro-fixed-header': fixedHeader,
-      'ant-pro-top-menu': isTop,
+      'ant-pro-top-menu': isTop || isMix,
+    }
+    const listeners = {
+      click: this.handleTopMenuClick
     }
 
     // 没有 <></> 暂时代替写法
     return (
       visible ? (
         <VueFragment>
-          { fixedHeader && <Header />}
+          { (fixedHeader||isMix) && <Header />}
+
           <Header
             style={{
               padding: 0,
               width: needSettingWidth
                 ? `calc(100% - ${collapsed ? 80 : siderWidth}px)`
                 : '100%',
-              zIndex: 9,
+              zIndex: isMix ? 100 :9,
               right: fixedHeader ? 0 : undefined
             }}
             class={className}
           >
-            {renderContent(h, props)}
+            {renderContent(h, props,listeners)}
           </Header>
         </VueFragment>
       ) : null
     )
+  },
+  methods:{
+    handleTopMenuClick(menu){
+      this.$emit('top-menu-select', menu)
+    }
+  },
+  computed:{
+    headerMenus(){
+      if(this.layout ==='topmenu'){
+       return this.menus
+      }else if(this.layout ==='mix'){
+        return this.menus.map(menu => { return {...menu, children:undefined }})
+      }else{
+        return []
+      }
+    }
   }
 }
 

@@ -4,7 +4,7 @@ import 'ant-design-vue/es/menu/style'
 import Menu from 'ant-design-vue/es/menu'
 import 'ant-design-vue/es/icon/style'
 import Icon from 'ant-design-vue/es/icon'
-
+import {LayoutSettingProps} from '../SettingDrawer/LayoutChange'
 const {
   Item: MenuItem,
   SubMenu
@@ -16,6 +16,8 @@ export const RouteMenuProps = {
   mode: PropTypes.string.def('inline'),
   collapsed: PropTypes.bool.def(false),
   i18nRender: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]).def(false),
+  layout:LayoutSettingProps.layout,
+  topMenu:PropTypes.object.def(null)
 }
 
 const httpReg = /(http|https|ftp):\/\/([\w.]+\/?)\S*/
@@ -114,6 +116,11 @@ const RouteMenu = {
         selectedKeys: this.selectedKeys
       },
       on: {
+        click: menu => {
+          if (!httpReg.test(menu.key)) {
+            this.$emit('click', menu)
+          }
+        },
         select: menu => {
           this.$emit('select', menu)
           if (!httpReg.test(menu.key)) {
@@ -136,11 +143,17 @@ const RouteMenu = {
     updateMenu () {
       const routes = this.$route.matched.concat()
       const { hidden } = this.$route.meta
-      if (routes.length >= 3 && hidden) {
-        routes.pop()
-        this.selectedKeys = [routes[routes.length - 1].path]
-      } else {
-        this.selectedKeys = [routes.pop().path]
+      if(this.layout ==='mix'){
+        this.selectedKeys = [routes[1].path]
+        const menu = this.menus.find(i=>i.path === routes[1].path)
+        this.$emit('click', menu)
+      }else{
+        if (routes.length >= 3 && hidden) {
+          routes.pop()
+          this.selectedKeys = [routes[routes.length - 1].path]
+        } else {
+          this.selectedKeys = [routes.pop().path]
+        }
       }
       const openKeys = []
       if (this.mode === 'inline') {

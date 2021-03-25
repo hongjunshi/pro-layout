@@ -91,15 +91,15 @@ const getThemeList = (i18nRender) => {
     }
   ]
 
-  if (list.find((item) => item.theme === 'dark')) {
-    themeList.push({
-      // disable click
-      disable: true,
-      key: 'realDark',
-      url: 'https://gw.alipayobjects.com/zos/antfincdn/hmKaLQvmY2/LCkqqYNmvBEbokSDscrm.svg',
-      title: i18nRender('app.setting.pagestyle.realdark'),
-    })
-  }
+  // if (list.find((item) => item.theme === 'dark')) {
+  //   themeList.push({
+  //     // disable click
+  //     disable: true,
+  //     key: 'realDark',
+  //     url: 'https://gw.alipayobjects.com/zos/antfincdn/hmKaLQvmY2/LCkqqYNmvBEbokSDscrm.svg',
+  //     title: i18nRender('app.setting.pagestyle.realdark'),
+  //   })
+  // }
   // insert  theme color List
   list.forEach(item => {
     const color = (item.modifyVars || {})['@primary-color']

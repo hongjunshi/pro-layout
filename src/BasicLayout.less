@@ -2,6 +2,7 @@
 
 @basicLayout-prefix-cls: ~'@{ant-prefix}-pro-basicLayout';
 @sider-menu-prefix-cls: ~'@{ant-prefix}-pro-sider-menu';
+
 @nav-header-height: @layout-header-height;
 
 .@{basicLayout-prefix-cls} {
@@ -64,7 +65,22 @@
   .ant-layout-sider-children {
     height: 100%;
   }
-
+  &.ant-pro-mix{
+    .ant-layout-sider{
+      padding-top: @nav-header-height;
+      .ant-menu{
+        margin-top: -4px;
+      }
+    }
+    .ant-pro-top-menu{
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+    .ant-pro-top-nav-header-left{
+      width: 184px;
+    }
+  }
   .trigger {
     font-size: 18px;
     line-height: 64px;

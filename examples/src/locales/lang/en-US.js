@@ -57,6 +57,7 @@ export default {
   'app.setting.fixedsidebar': 'Fixed Sidebar',
   'app.setting.sidemenu': 'Side Menu Layout',
   'app.setting.topmenu': 'Top Menu Layout',
+  'app.setting.mix': 'Mix Menu Layout',
   'app.setting.content-width.fixed': 'Fixed',
   'app.setting.content-width.fluid': 'Fluid',
   'app.setting.othersettings': 'Other Settings',

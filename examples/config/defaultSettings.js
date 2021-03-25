@@ -8,7 +8,7 @@ export const storageOptions = {
 export default {
   navTheme: 'dark',
   primaryColor: '#1890FF',
-  layout: 'sidemenu',
+  layout: 'mixmenu',
   contentWidth: 'Fluid',
   fixedHeader: false,
   autoHideHeader: false,

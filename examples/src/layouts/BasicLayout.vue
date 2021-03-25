@@ -9,14 +9,16 @@
     :i18nRender="i18nRender"
     :siderWidth="208"
     v-bind="settings"
+    :topMenu="topMenu"
+    @top-menu-select="handleTopMenuSelect"
   >
-    <template v-slot:menuRender>
+<!--    <template v-slot:menuRender>
       <ul style="color: white;">
         <li v-for="(menu, key) in menus" :key="key">
           {{ menu.meta.title }}
         </li>
       </ul>
-    </template>
+    </template>-->
     <template v-slot:menuHeaderRender>
       <div>
         <img src="../assets/logo.svg" />
@@ -92,7 +94,8 @@ export default {
 
         hideHintAlert: false,
         hideCopyButton: false
-      }
+      },
+      topMenu: null
     }
   },
   created () {
@@ -122,7 +125,7 @@ export default {
           this.settings[type] = value
           break
         case 'layout':
-          if (value === 'sidemenu') {
+          if (value === 'sidemenu' || value === 'mix') {
             this.settings.contentWidth = CONTENT_WIDTH_TYPE.Fluid
           } else {
             this.settings.fixSiderbar = false
@@ -130,6 +133,9 @@ export default {
           }
           break
       }
+    },
+    handleTopMenuSelect (menu) {
+      this.topMenu = menu
     }
   }
 }

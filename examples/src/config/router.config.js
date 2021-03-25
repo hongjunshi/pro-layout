@@ -47,6 +47,7 @@ const asyncRouterMap = [
       {
         path: '/form',
         name: 'form',
+        redirect: '/form/basic-form',
         meta: {
           keepAlive: true,
           title: 'menu.form.default',

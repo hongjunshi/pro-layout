@@ -26,6 +26,7 @@ export const SiderMenuProps = {
   // render function or vnode
   menuHeaderRender: PropTypes.oneOfType([PropTypes.func, PropTypes.array, PropTypes.object, PropTypes.bool]),
   menuRender: PropTypes.oneOfType([PropTypes.func, PropTypes.array, PropTypes.object, PropTypes.bool]),
+  topMenu: PropTypes.object.def(null)
 }
 
 export const defaultRenderLogo = (h, logo) => {
@@ -85,7 +86,8 @@ const SiderMenu = {
       onMenuHeaderClick = () => null,
       i18nRender,
       menuHeaderRender,
-      menuRender
+      menuRender,
+      layout
     } = this
     const siderCls = ['ant-pro-sider-menu-sider']
     if (fixSiderbar) siderCls.push('fix-sider-bar')
@@ -99,7 +101,7 @@ const SiderMenu = {
       logo, title, menuHeaderRender, collapsed
     })
 
-    return (<Sider
+    return (menus.length>0 &&<Sider
       class={siderCls}
       breakpoint={'lg'}
       trigger={null}
@@ -108,7 +110,7 @@ const SiderMenu = {
       collapsible={collapsible}
       collapsed={collapsed}
     >
-      {headerDom && (
+      {layout!=='mix' && headerDom && (
         <div
           class="ant-pro-sider-menu-logo"
           onClick={onMenuHeaderClick}

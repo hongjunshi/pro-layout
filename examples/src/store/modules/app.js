@@ -20,7 +20,7 @@ const App = {
     sideCollapsed: true,
     device: 'desktop',
     theme: 'dark',
-    layout: '',
+    layout: 'mixmenu',
     contentWidth: '',
     fixedHeader: false,
     fixedSidebar: false,
