@@ -18,6 +18,7 @@ export const SiderMenuProps = {
   handleCollapse: PropTypes.func,
   menus: PropTypes.array,
   siderWidth: PropTypes.number.def(256),
+  collapsedWidth: PropTypes.number.def(80),
   isMobile: PropTypes.bool,
   layout: PropTypes.string.def('inline'),
   fixSiderbar: PropTypes.bool,
@@ -77,6 +78,7 @@ const SiderMenu = {
       collapsible,
       collapsed,
       siderWidth,
+      collapsedWidth,
       fixSiderbar,
       mode,
       theme,
@@ -109,6 +111,7 @@ const SiderMenu = {
       theme={theme}
       collapsible={collapsible}
       collapsed={collapsed}
+      collapsedWidth={collapsedWidth}
     >
       {layout!=='mix' && headerDom && (
         <div

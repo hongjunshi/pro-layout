@@ -45,9 +45,9 @@ const asyncRouterMap = [
         ]
       },
       {
-        path: '/form',
+        path: '/demos/form',
         name: 'form',
-        redirect: '/form/basic-form',
+        redirect: '/demos/form/basic-form',
         meta: {
           keepAlive: true,
           title: 'menu.form.default',
@@ -56,7 +56,7 @@ const asyncRouterMap = [
         component: RouteView,
         children: [
           {
-            path: '/form/basic-form',
+            path: '/demos/form/basic-form',
             name: 'basic-form',
             meta: {
               keepAlive: true,
@@ -66,7 +66,7 @@ const asyncRouterMap = [
             component: () => import(/* webpackChunkName: "about" */ '../views/form/basic-form')
           },
           {
-            path: '/form/step-form',
+            path: '/demos/form/step-form',
             name: 'step-form',
             meta: {
               keepAlive: true,
@@ -76,7 +76,7 @@ const asyncRouterMap = [
             component: () => import(/* webpackChunkName: "about" */ '../views/form/step-form')
           },
           {
-            path: '/form/advanced-form',
+            path: '/demos/form/advanced-form',
             name: 'advanced-form',
             meta: {
               keepAlive: true,

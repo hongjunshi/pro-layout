@@ -86,6 +86,9 @@ const defaultConfig = {
           // 'primary-color': '#F5222D',
           // 'link-color': '#F5222D',
           // 'border-radius-base': '4px'
+
+          'layout-header-height': '48px',
+          'menu-collapsed-width': '48px'
         },
         // DO NOT REMOVE THIS LINE
         javascriptEnabled: true

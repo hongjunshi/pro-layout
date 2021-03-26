@@ -8,6 +8,7 @@
     :handleCollapse="handleCollapse"
     :i18nRender="i18nRender"
     :siderWidth="208"
+    :collapsedWidth="48"
     v-bind="settings"
     :topMenu="topMenu"
     @top-menu-select="handleTopMenuSelect"
