@@ -30,7 +30,7 @@ export const HeaderViewProps = {
 const renderContent = (h, props,listeners ) => {
   const isTop = props.layout === 'topmenu'
   const isMix = props.layout === 'mix'
-  const maxWidth = 1200 - 280 - 120
+  const maxWidth = isMix ? 1200 :1200 - 280 - 120
   const contentWidth = props.contentWidth === 'Fixed'
   const baseCls = 'ant-pro-top-nav-header'
   const { logo, title, theme, isMobile, headerRender, rightContentRender, menuRender, menuHeaderRender } = props
