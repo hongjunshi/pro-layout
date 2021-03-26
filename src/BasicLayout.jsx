@@ -73,7 +73,18 @@ const headerRender = (h, props,listeners) => {
 }
 
 const defaultI18nRender = (key) => key
+const hasMixSiderMenus = (menus,topMenu) =>{
+      if(!topMenu){
+        return false
+      }
+      const menu = menus.find(i=> i.path ===this.topMenu.path || i.path ===topMenu.key)
+      if(menu && menu.children &&menu.children.length>0){
+        return true
+      }else{
+        return false
+      }
 
+}
 const BasicLayout = {
   name: 'BasicLayout',
   functional: true,
@@ -92,7 +103,8 @@ const BasicLayout = {
       collapsedWidth,
       fixSiderbar,
       i18nRender = defaultI18nRender,
-      topMenu
+      topMenu,
+      menus
     } = props
     const footerRender = getComponentFromProp(content, 'footerRender')
     const rightContentRender = getComponentFromProp(content, 'rightContentRender')
@@ -107,7 +119,7 @@ const BasicLayout = {
     const hasSiderMenu = !isTopMenu
     // If it is a fix menu, calculate padding
     // don't need padding in phone mode
-    const hasLeftPadding = fixSiderbar && !isTopMenu && !isMobile
+    const hasLeftPadding = fixSiderbar && !isTopMenu &&(!isMix ||hasMixSiderMenus(menus,topMenu)) && !isMobile
     const cdProps = {
       ...props,
       hasSiderMenu,

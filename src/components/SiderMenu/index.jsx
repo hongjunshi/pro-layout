@@ -44,7 +44,6 @@ const SiderMenuWrapper = {
   },
   computed:{
     siderMenus(){
-      console.log('SiderMenuWrapper',this.topMenu)
       if(this.layout==='mix'){
         if(!this.topMenu){
           return []
@@ -60,11 +59,6 @@ const SiderMenuWrapper = {
       }
     }
   },
-  watch:{
-    topMenu(val){
-      console.log(val)
-    }
-  }
 }
 
 SiderMenuWrapper.install = function (Vue) {
