@@ -72,6 +72,7 @@ const HeaderView = {
       layout,
       collapsed,
       siderWidth,
+      collapsedWidth,
       fixedHeader,
       autoHideHeader,
       hasSiderMenu,
@@ -80,7 +81,7 @@ const HeaderView = {
     const isTop = layout === 'topmenu'
     const isMix = layout === 'mix'
 
-    const needSettingWidth = fixedHeader && hasSiderMenu && !isTop && !isMobile
+    const needSettingWidth = fixedHeader && hasSiderMenu && (!isTop && !isMix) && !isMobile
 
     const className = {
       'ant-pro-fixed-header': fixedHeader,
@@ -100,7 +101,7 @@ const HeaderView = {
             style={{
               padding: 0,
               width: needSettingWidth
-                ? `calc(100% - ${collapsed ? 80 : siderWidth}px)`
+                ? `calc(100% - ${collapsed ? collapsedWidth : siderWidth}px)`
                 : '100%',
               zIndex: isMix ? 100 :9,
               right: fixedHeader ? 0 : undefined
