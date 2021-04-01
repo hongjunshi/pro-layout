@@ -24,8 +24,9 @@ export const LayoutSettingProps = {
   contentWidth: PropTypes.oneOf(['Fluid', 'Fixed']).def('Fluid'),
   fixedHeader: PropTypes.bool,
   fixSiderbar: PropTypes.bool,
+  autoSplitMenus: PropTypes.bool,
+  multiTab: PropTypes.bool,
   layout: PropTypes.oneOf(['sidemenu', 'topmenu','mix']),
-
   i18nRender: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]).def(false),
 }
 
@@ -34,7 +35,7 @@ export default {
   inject: ['locale'],
   render (h) {
     const i18n = this.$props.i18nRender || this.locale
-    const { contentWidth, fixedHeader, layout, fixSiderbar } = this
+    const { contentWidth, fixedHeader, layout, fixSiderbar, autoSplitMenus, multiTab } = this
 
     const handleChange = (type, value) => {
       this.$emit('change', { type, value })
@@ -53,7 +54,7 @@ export default {
                 onSelect={(value) => handleChange('contentWidth', value)}
                 style={{ width: '80px' }}
                 >
-                {layout === 'sidemenu' ? null : (
+                {layout === 'sidemenu'|| layout === 'mix'? null : (
                   <Select.Option value="Fixed">
                     {i18n('app.setting.content-width.fixed')}
                   </Select.Option>
@@ -70,6 +71,7 @@ export default {
           <Switch
           size="small"
           checked={!!fixedHeader}
+          disabled={layout ==='mix'}
           onChange={(checked) => handleChange('fixedHeader', checked)}
           />
           ),
@@ -86,7 +88,27 @@ export default {
             onChange={(checked) => handleChange('fixSiderbar', checked)}
           />
           ),
-        },
+        },{
+            title: i18n('app.setting.autosplitmenus'),
+            disabled: layout !== 'mix',
+            action: (
+              <Switch
+                size="small"
+                disabled={layout !== 'mix'}
+                checked={!!autoSplitMenus}
+                onChange={(checked) => handleChange('autoSplitMenus', checked)}
+              />
+            ),
+          },{
+            title: i18n('app.setting.multitab'),
+            action: (
+              <Switch
+                size="small"
+                checked={!!multiTab}
+                onChange={(checked) => handleChange('multiTab', checked)}
+              />
+            ),
+          },
           ]}
         renderItem={(item, index) => renderLayoutSettingItem(h, item)}
       />

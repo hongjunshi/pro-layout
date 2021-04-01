@@ -8,6 +8,8 @@ import {
   TOGGLE_FIXED_SIDEBAR,
   TOGGLE_CONTENT_WIDTH,
   TOGGLE_HIDE_HEADER,
+  AUTO_SPLIT_MENUS,
+  MULTI_TAB,
   TOGGLE_COLOR,
   TOGGLE_WEAK,
   // i18n
@@ -25,6 +27,8 @@ const App = {
     fixedHeader: false,
     fixedSidebar: false,
     autoHideHeader: false,
+    autoSplitMenus: false,
+    multiTab: false,
     color: '',
     weak: false,
     lang: 'en-US'
@@ -60,6 +64,14 @@ const App = {
     [TOGGLE_HIDE_HEADER]: (state, type) => {
       state.autoHideHeader = type
       Vue.ls.set(TOGGLE_HIDE_HEADER, type)
+    },
+    [AUTO_SPLIT_MENUS]: (state, type) => {
+      state.autoSplitMenus = type
+      Vue.ls.set(AUTO_SPLIT_MENUS, type)
+    },
+    [MULTI_TAB]: (state, type) => {
+      state.multiTab = type
+      Vue.ls.set(MULTI_TAB, type)
     },
     [TOGGLE_COLOR]: (state, color) => {
       state.color = color

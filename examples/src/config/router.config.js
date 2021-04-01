@@ -1,10 +1,11 @@
 // eslint-disable-next-line
 import BasicLayout from '../layouts/BasicLayout.vue'
+import RouteView from '../../../src/components/RouteView'
 
-const RouteView = {
-  name: 'RouteView',
-  render: (h) => h('router-view')
-}
+// const RouteView = {
+//   name: 'RouteView',
+//   render: (h) => h('router-view')
+// }
 
 const asyncRouterMap = [
   {

@@ -13,7 +13,7 @@ import HeaderView, { HeaderViewProps } from './Header'
 import WrapContent from './WrapContent'
 import ConfigProvider from './components/ConfigProvider'
 import PageHeaderWrapper from './components/PageHeaderWrapper'
-
+import MultiTab from './components/MultiTab'
 export const BasicLayoutProps = {
   ...SiderMenuProps,
   ...HeaderViewProps,
@@ -25,7 +25,8 @@ export const BasicLayoutProps = {
   mediaQuery: PropTypes.object.def({}),
   handleMediaQuery: PropTypes.func,
   footerRender: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]).def(undefined),
-  topMenu: PropTypes.object.def(null)
+  topMenu: PropTypes.object.def(null),
+  multiTab: PropTypes.bool.def(false),
 }
 
 const MediaQueryEnum = {
@@ -77,7 +78,7 @@ const hasMixSiderMenus = (menus,topMenu) =>{
       if(!topMenu){
         return false
       }
-      const menu = menus.find(i=> i.path ===this.topMenu.path || i.path ===topMenu.key)
+      const menu = menus.find(i=> i.path === topMenu.path || i.path === topMenu.key)
       if(menu && menu.children &&menu.children.length>0){
         return true
       }else{
@@ -104,7 +105,8 @@ const BasicLayout = {
       fixSiderbar,
       i18nRender = defaultI18nRender,
       topMenu,
-      menus
+      menus,
+      multiTab
     } = props
     const footerRender = getComponentFromProp(content, 'footerRender')
     const rightContentRender = getComponentFromProp(content, 'rightContentRender')
@@ -119,6 +121,7 @@ const BasicLayout = {
     const hasSiderMenu = !isTopMenu
     // If it is a fix menu, calculate padding
     // don't need padding in phone mode
+    console.log('multiTab=',multiTab)
     const hasLeftPadding = fixSiderbar && !isTopMenu &&(!isMix ||hasMixSiderMenus(menus,topMenu)) && !isMobile
     const cdProps = {
       ...props,
@@ -159,8 +162,9 @@ const BasicLayout = {
                 ...cdProps,
                 mode: 'horizontal',
               },listeners)}
+              {multiTab && <MultiTab/>}
               <WrapContent class="ant-pro-basicLayout-content" contentWidth={props.contentWidth}>
-                {children}
+                 {children}
               </WrapContent>
               { footerRender !== false && (
                 <Layout.Footer>

@@ -91,6 +91,7 @@ const SiderMenu = {
       menuRender,
       layout
     } = this
+
     const siderCls = ['ant-pro-sider-menu-sider']
     if (fixSiderbar) siderCls.push('fix-sider-bar')
     if (theme === 'light') siderCls.push('light')

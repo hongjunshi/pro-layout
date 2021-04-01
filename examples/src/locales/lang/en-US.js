@@ -55,6 +55,8 @@ export default {
   'app.setting.content-width': 'Content Width',
   'app.setting.fixedheader': 'Fixed Header',
   'app.setting.fixedsidebar': 'Fixed Sidebar',
+  'app.setting.autosplitmenus': 'Auto Split Menus',
+  'app.setting.multitab': 'Multi Tab',
   'app.setting.sidemenu': 'Side Menu Layout',
   'app.setting.topmenu': 'Top Menu Layout',
   'app.setting.mix': 'Mix Menu Layout',

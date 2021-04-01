@@ -56,10 +56,9 @@
 <script>
 import { asyncRouterMap } from '../config/router.config'
 import { i18nRender } from '../locales'
-
+import { MULTI_TAB } from '../store/mutation-types'
 import defaultSettings from '@/config/defaultSettings'
 import { CONTENT_WIDTH_TYPE } from '@/store/mutation-types'
-
 export default {
   name: 'BasicLayout',
   data () {
@@ -94,7 +93,9 @@ export default {
         colorWeak: defaultSettings.colorWeak,
 
         hideHintAlert: false,
-        hideCopyButton: false
+        hideCopyButton: false,
+        autoSplitMenus: false,
+        multiTab: defaultSettings.multiTab
       },
       topMenu: null
     }
@@ -119,20 +120,26 @@ export default {
       this.collapsed = val
     },
     handleSettingChange ({ type, value }) {
-      console.log('type', type, value)
+      // console.log('type', type, value)
+
       type && (this.settings[type] = value)
       switch (type) {
         case 'contentWidth':
           this.settings[type] = value
           break
         case 'layout':
-          if (value === 'sidemenu' || value === 'mix') {
+          if (value === 'sidemenu') {
             this.settings.contentWidth = CONTENT_WIDTH_TYPE.Fluid
+          } else if (value === 'mix') {
+            this.settings.contentWidth = CONTENT_WIDTH_TYPE.Fluid
+            this.settings.fixedHeader = true
           } else {
             this.settings.fixSiderbar = false
             this.settings.contentWidth = CONTENT_WIDTH_TYPE.Fixed
           }
           break
+        case 'multiTab':
+            this.$store.commit(MULTI_TAB, value)
       }
     },
     handleTopMenuSelect (menu) {

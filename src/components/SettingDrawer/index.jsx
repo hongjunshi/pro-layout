@@ -195,7 +195,9 @@ const SettingDrawer = {
       contentWidth,
       hideHintAlert,
       hideCopyButton,
-      colorWeak
+      colorWeak,
+      autoSplitMenus,
+      multiTab
     } = settings
 
     const i18n = this.$props.i18nRender || this.locale || defaultI18nRender
@@ -270,6 +272,8 @@ const SettingDrawer = {
             fixedHeader={fixedHeader}
             fixSiderbar={isTopMenu ? false : fixSiderbar}
             layout={layout}
+            autoSplitMenus={autoSplitMenus}
+            multiTab = {multiTab}
             onChange={({ type, value }) => {
               changeSetting(type, value)
             }}

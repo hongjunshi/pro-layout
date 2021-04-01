@@ -19,5 +19,7 @@ export default {
   },
   title: 'Ant Design Pro',
   pwa: false,
-  iconfontUrl: ''
+  iconfontUrl: '',
+  autoSplitMenus: false,
+  multiTab: false
 }
