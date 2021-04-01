@@ -1,5 +1,4 @@
-<script>
-export default {
+const  RouteView = {
   name: 'RouteView',
   props: {
     keepAlive: {
@@ -32,4 +31,4 @@ export default {
     return this.keepAlive || getters.multiTab || meta.keepAlive ? inKeep : notKeep
   }
 }
-</script>
+export default RouteView

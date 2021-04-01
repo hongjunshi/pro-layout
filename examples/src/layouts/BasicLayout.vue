@@ -49,7 +49,7 @@
         This is SettingDrawer custom footer content.
       </div>
     </setting-drawer>
-    <router-view />
+    <route-view />
   </pro-layout>
 </template>
 
@@ -59,8 +59,10 @@ import { i18nRender } from '../locales'
 import { MULTI_TAB } from '../store/mutation-types'
 import defaultSettings from '@/config/defaultSettings'
 import { CONTENT_WIDTH_TYPE } from '@/store/mutation-types'
+import RouteView from '../../../src/components/RouteView'
 export default {
   name: 'BasicLayout',
+  components: { RouteView },
   data () {
     return {
       // base

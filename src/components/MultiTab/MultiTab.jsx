@@ -1,7 +1,5 @@
-<script>
 import events from './events'
-import { mapActions } from 'vuex'
-export default {
+const MultiTab = {
   name: 'MultiTab',
   data() {
     return {
@@ -220,4 +218,4 @@ export default {
     )
   }
 }
-</script>
+export default MultiTab

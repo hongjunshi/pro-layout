@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import BasicLayout from '../layouts/BasicLayout.vue'
-import RouteView from '../../../src/components/RouteView'
+import RouteView from '../../../src/components/RouteView/RouteView'
 
 // const RouteView = {
 //   name: 'RouteView',
