@@ -27,14 +27,25 @@ const MultiTab = {
         this.closeThat(val)
       })
       .$on('rename', ({ key, name }) => {
-        console.log('rename', key, name)
         try {
           const item = this.pages.find(item => item.path === key)
           item.meta.customTitle = name
           this.$forceUpdate()
         } catch (e) {}
       })
-
+    this.$watch('$route', (newVal) => {
+      console.log(newVal)
+      this.activeKey = newVal.fullPath
+      if (this.fullPathList.indexOf(newVal.fullPath) < 0) {
+        this.fullPathList.push(newVal.fullPath)
+        this.pages.push(newVal)
+      }
+      this.addCachedView(newVal)
+    })
+    this.$watch('activeKey', (newPathKey) => {
+      console.log('activeKey=',newPathKey)
+      this.$router.push({ path: newPathKey })
+    })
     this.pages.push(this.$route)
     this.fullPathList.push(this.$route.fullPath)
     this.selectedLastPath()
@@ -59,9 +70,7 @@ const MultiTab = {
     },
     removeViewCache(removedView) {
       const view = removedView.matched[removedView.matched.length - 1]
-
       const $vnode = view.instances.default.$vnode
-      console.log($vnode)
       if ($vnode ) {
         if ($vnode.parent && $vnode.parent.componentInstance && $vnode.parent.componentInstance.cache) {
           if ($vnode.componentOptions) {
@@ -173,20 +182,8 @@ const MultiTab = {
       )
     }
   },
-  watch: {
-    $route: function(newVal) {
-      this.activeKey = newVal.fullPath
-      if (this.fullPathList.indexOf(newVal.fullPath) < 0) {
-        this.fullPathList.push(newVal.fullPath)
-        this.pages.push(newVal)
-      }
-      this.addCachedView(newVal)
-    },
-    activeKey: function(newPathKey) {
-      this.$router.push({ path: newPathKey })
-    }
-  },
-  render() {
+
+  render(h) {
     const {
       onEdit,
       $data: { pages }

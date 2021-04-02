@@ -2,6 +2,20 @@
 # yarn lockfile v1
 
 
+"@ant-design-vue/pro-layout@1.0.8-15":
+  version "1.0.8-15"
+  resolved "http://43.239.120.231:11381/repository/npm/@ant-design-vue/pro-layout/-/pro-layout-1.0.8-15.tgz#355e0806512d2c54f81500d546808cfbd56c96d2"
+  integrity sha512-MWiWtn3QwZB6lPpF8VyudOEMvI+aCJH6wWm8ihPH3F0q0PiaqMUIAInM3Qp37Bg115WYqArFY2+eFnfYWoZHXw==
+  dependencies:
+    ant-design-vue "^1.6.2"
+    classnames "^2.2.6"
+    insert-css "^2.0.0"
+    lodash "^4.17.15"
+    omit.js "^1.0.2"
+    umi-request "^1.2.11"
+    vue-container-query "^0.1.0"
+    vue-copy-to-clipboard "^1.0.3"
+
 "@ant-design/colors@^3.1.0":
   version "3.2.2"
   resolved "https://registry.npm.taobao.org/@ant-design/colors/download/@ant-design/colors-3.2.2.tgz#5ad43d619e911f3488ebac303d606e66a8423903"
@@ -2467,6 +2481,11 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
+batch-processor@^1.0.0:
+  version "1.0.0"
+  resolved "http://43.239.120.231:11381/repository/npm/batch-processor/-/batch-processor-1.0.0.tgz#75c95c32b748e0850d10c2b168f6bdbe9891ace8"
+  integrity sha1-dclcMrdI4IUNEMKxaPa9vpiRrOg=
+
 batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.npm.taobao.org/batch/download/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
@@ -3298,6 +3317,11 @@ constants-browserify@^1.0.0:
   resolved "https://registry.npm.taobao.org/constants-browserify/download/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
   integrity sha1-wguW2MYXdIqvHBYCF2DNJ/y4y3U=
 
+container-query-toolkit@^0.1.3:
+  version "0.1.3"
+  resolved "http://43.239.120.231:11381/repository/npm/container-query-toolkit/-/container-query-toolkit-0.1.3.tgz#79ece9fe491d9187b7051247067f1faac6ce00b0"
+  integrity sha1-eezp/kkdkYe3BRJHBn8fqsbOALA=
+
 contains-path@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npm.taobao.org/contains-path/download/contains-path-0.1.0.tgz#fe8cf184ff6670b6baef01a9d4861a5cbec4120a"
@@ -3348,6 +3372,13 @@ copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://registry.npm.taobao.org/copy-descriptor/download/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
+
+copy-to-clipboard@^3.3.1:
+  version "3.3.1"
+  resolved "http://43.239.120.231:11381/repository/npm/copy-to-clipboard/-/copy-to-clipboard-3.3.1.tgz#115aa1a9998ffab6196f93076ad6da3b913662ae"
+  integrity sha1-EVqhqZmP+rYZb5MHatbaO5E2Yq4=
+  dependencies:
+    toggle-selection "^1.0.6"
 
 copy-webpack-plugin@^5.1.1:
   version "5.1.2"
@@ -4101,6 +4132,13 @@ electron-to-chromium@^1.3.591:
   resolved "https://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.607.tgz?cache=0&sync_timestamp=1606242828265&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Felectron-to-chromium%2Fdownload%2Felectron-to-chromium-1.3.607.tgz#1bff13f1cf89f2fee0d244b8c64a7138f80f3a3b"
   integrity sha1-G/8T8c+J8v7g0kS4xkpxOPgPOjs=
 
+element-resize-detector@1.1.13:
+  version "1.1.13"
+  resolved "http://43.239.120.231:11381/repository/npm/element-resize-detector/-/element-resize-detector-1.1.13.tgz#f61907e98a91b1ad215f92790bc15113df68444d"
+  integrity sha1-9hkH6YqRsa0hX5J5C8FRE99oRE0=
+  dependencies:
+    batch-processor "^1.0.0"
+
 elliptic@^6.5.3:
   version "6.5.3"
   resolved "https://registry.npm.taobao.org/elliptic/download/elliptic-6.5.3.tgz#cb59eb2efdaf73a0bd78ccd7015a62ad6e0f93d6"
@@ -4138,6 +4176,13 @@ encodeurl@~1.0.2:
   version "1.0.2"
   resolved "https://registry.npm.taobao.org/encodeurl/download/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
   integrity sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
+
+encoding@^0.1.11:
+  version "0.1.13"
+  resolved "http://43.239.120.231:11381/repository/npm/encoding/-/encoding-0.1.13.tgz#56574afdd791f54a8e9b2785c0582a2d26210fa9"
+  integrity sha1-VldK/deR9UqOmyeFwFgqLSYhD6k=
+  dependencies:
+    iconv-lite "^0.6.2"
 
 end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   version "1.4.4"
@@ -5015,6 +5060,15 @@ get-intrinsic@^1.0.0, get-intrinsic@^1.0.1:
     has "^1.0.3"
     has-symbols "^1.0.1"
 
+get-intrinsic@^1.0.2:
+  version "1.1.1"
+  resolved "http://43.239.120.231:11381/repository/npm/get-intrinsic/-/get-intrinsic-1.1.1.tgz#15f59f376f855c446963948f0d24cd3637b4abc6"
+  integrity sha1-FfWfN2+FXERpY5SPDSTNNje0q8Y=
+  dependencies:
+    function-bind "^1.1.1"
+    has "^1.0.3"
+    has-symbols "^1.0.1"
+
 get-stream@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npm.taobao.org/get-stream/download/get-stream-3.0.0.tgz#8e943d1358dc37555054ecbe2edb05aa174ede14"
@@ -5468,6 +5522,13 @@ iconv-lite@0.4.24, iconv-lite@^0.4.24:
   integrity sha1-ICK0sl+93CHS9SSXSkdKr+czkIs=
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
+
+iconv-lite@^0.6.2:
+  version "0.6.2"
+  resolved "http://43.239.120.231:11381/repository/npm/iconv-lite/-/iconv-lite-0.6.2.tgz#ce13d1875b0c3a674bd6a04b7f76b01b1b6ded01"
+  integrity sha1-zhPRh1sMOmdL1qBLf3awGxtt7QE=
+  dependencies:
+    safer-buffer ">= 2.1.2 < 3.0.0"
 
 icss-utils@^4.0.0, icss-utils@^4.1.1:
   version "4.1.1"
@@ -5929,9 +5990,9 @@ is-resolvable@^1.0.0:
   resolved "https://registry.npm.taobao.org/is-resolvable/download/is-resolvable-1.1.0.tgz#fb18f87ce1feb925169c9a407c19318a3206ed88"
   integrity sha1-+xj4fOH+uSUWnJpAfBkxijIG7Yg=
 
-is-stream@^1.1.0:
+is-stream@^1.0.1, is-stream@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.npm.taobao.org/is-stream/download/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
+  resolved "http://43.239.120.231:11381/repository/npm/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
   integrity sha1-EtSj3U5o4Lec6428hBc66A2RykQ=
 
 is-stream@^2.0.0:
@@ -6011,6 +6072,14 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.npm.taobao.org/isobject/download/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
+
+isomorphic-fetch@^2.2.1:
+  version "2.2.1"
+  resolved "http://43.239.120.231:11381/repository/npm/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
+  integrity sha1-YRrhrPFPXoH3KVB0coGf6XM1WKk=
+  dependencies:
+    node-fetch "^1.0.1"
+    whatwg-fetch ">=0.10.0"
 
 isstream@~0.1.2:
   version "0.1.2"
@@ -7351,6 +7420,14 @@ node-emoji@^1.10.0:
   dependencies:
     lodash.toarray "^4.4.0"
 
+node-fetch@^1.0.1:
+  version "1.7.3"
+  resolved "http://43.239.120.231:11381/repository/npm/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
+  integrity sha1-mA9vcthSEaU0fGsrwYxbhMPrR+8=
+  dependencies:
+    encoding "^0.1.11"
+    is-stream "^1.0.1"
+
 node-forge@^0.10.0:
   version "0.10.0"
   resolved "https://registry.npm.taobao.org/node-forge/download/node-forge-0.10.0.tgz#32dea2afb3e9926f02ee5ce8794902691a676bf3"
@@ -7534,6 +7611,11 @@ object-inspect@^1.8.0:
   resolved "https://registry.npm.taobao.org/object-inspect/download/object-inspect-1.8.0.tgz#df807e5ecf53a609cc6bfe93eac3cc7be5b3a9d0"
   integrity sha1-34B+Xs9TpgnMa/6T6sPMe+WzqdA=
 
+object-inspect@^1.9.0:
+  version "1.9.0"
+  resolved "http://43.239.120.231:11381/repository/npm/object-inspect/-/object-inspect-1.9.0.tgz#c90521d74e1127b67266ded3394ad6116986533a"
+  integrity sha1-yQUh104RJ7ZyZt7TOUrWEWmGUzo=
+
 object-is@^1.0.1:
   version "1.1.3"
   resolved "https://registry.npm.taobao.org/object-is/download/object-is-1.1.3.tgz?cache=0&sync_timestamp=1601502119770&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fobject-is%2Fdownload%2Fobject-is-1.1.3.tgz#2e3b9e65560137455ee3bd62aec4d90a2ea1cc81"
@@ -7594,7 +7676,7 @@ obuf@^1.0.0, obuf@^1.1.2:
   resolved "https://registry.npm.taobao.org/obuf/download/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha1-Cb6jND1BhZ69RGKS0RydTbYZCE4=
 
-omit.js@^1.0.0:
+omit.js@^1.0.0, omit.js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npm.taobao.org/omit.js/download/omit.js-1.0.2.tgz#91a14f0eba84066dfa015bf30e474c47f30bc858"
   integrity sha1-kaFPDrqEBm36AVvzDkdMR/MLyFg=
@@ -8557,6 +8639,13 @@ qs@6.7.0:
   resolved "https://registry.npm.taobao.org/qs/download/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha1-QdwaAV49WB8WIXdr4xr7KHapsbw=
 
+qs@^6.9.1:
+  version "6.10.1"
+  resolved "http://43.239.120.231:11381/repository/npm/qs/-/qs-6.10.1.tgz#4931482fa8d647a5aab799c5271d2133b981fb6a"
+  integrity sha1-STFIL6jWR6Wqt5nFJx0hM7mB+2o=
+  dependencies:
+    side-channel "^1.0.4"
+
 qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.npm.taobao.org/qs/download/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
@@ -8886,6 +8975,13 @@ requires-port@^1.0.0:
   resolved "https://registry.npm.taobao.org/requires-port/download/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
+resize-observer-lite@^0.2.3:
+  version "0.2.3"
+  resolved "http://43.239.120.231:11381/repository/npm/resize-observer-lite/-/resize-observer-lite-0.2.3.tgz#b557f378e2ce9b9aab1dc71a91047bd7ed1d8915"
+  integrity sha1-tVfzeOLOm5qrHccakQR71+0diRU=
+  dependencies:
+    element-resize-detector "1.1.13"
+
 resize-observer-polyfill@^1.5.1:
   version "1.5.1"
   resolved "https://registry.npm.taobao.org/resize-observer-polyfill/download/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
@@ -9025,9 +9121,9 @@ safe-regex@^1.1.0:
   dependencies:
     ret "~0.1.10"
 
-"safer-buffer@>= 2.1.2 < 3", safer-buffer@^2.0.2, safer-buffer@^2.1.0, safer-buffer@~2.1.0:
+"safer-buffer@>= 2.1.2 < 3", "safer-buffer@>= 2.1.2 < 3.0.0", safer-buffer@^2.0.2, safer-buffer@^2.1.0, safer-buffer@~2.1.0:
   version "2.1.2"
-  resolved "https://registry.npm.taobao.org/safer-buffer/download/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
+  resolved "http://43.239.120.231:11381/repository/npm/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
 
 sane@^4.0.3:
@@ -9232,6 +9328,15 @@ shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npm.taobao.org/shellwords/download/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha1-1rkYHBpI05cyTISHHvvPxz/AZUs=
+
+side-channel@^1.0.4:
+  version "1.0.4"
+  resolved "http://43.239.120.231:11381/repository/npm/side-channel/-/side-channel-1.0.4.tgz#efce5c8fdc104ee751b25c58d4290011fa5ea2cf"
+  integrity sha1-785cj9wQTudRslxY1CkAEfpeos8=
+  dependencies:
+    call-bind "^1.0.0"
+    get-intrinsic "^1.0.2"
+    object-inspect "^1.9.0"
 
 sigmund@^1.0.1:
   version "1.0.1"
@@ -9929,6 +10034,11 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
+toggle-selection@^1.0.6:
+  version "1.0.6"
+  resolved "http://43.239.120.231:11381/repository/npm/toggle-selection/-/toggle-selection-1.0.6.tgz#6e45b1263f2017fa0acc7d89d78b15b8bf77da32"
+  integrity sha1-bkWxJj8gF/oKzH2J14sVuL932jI=
+
 toidentifier@1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/toidentifier/download/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
@@ -10068,6 +10178,14 @@ uglify-js@3.4.x:
   dependencies:
     commander "~2.19.0"
     source-map "~0.6.1"
+
+umi-request@^1.2.11:
+  version "1.3.5"
+  resolved "http://43.239.120.231:11381/repository/npm/umi-request/-/umi-request-1.3.5.tgz#2af7e9fbaaeed0086c07d8c4876b3af65c084aea"
+  integrity sha1-Kvfp+6ru0AhsB9jEh2s69lwISuo=
+  dependencies:
+    isomorphic-fetch "^2.2.1"
+    qs "^6.9.1"
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
@@ -10285,6 +10403,22 @@ vm-browserify@^1.0.1:
   resolved "https://registry.npm.taobao.org/vm-browserify/download/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha1-eGQcSIuObKkadfUR56OzKobl3aA=
 
+vue-container-query@^0.1.0:
+  version "0.1.0"
+  resolved "http://43.239.120.231:11381/repository/npm/vue-container-query/-/vue-container-query-0.1.0.tgz#8210b49388f2350aa4afda92df5caca18ff220a1"
+  integrity sha1-ghC0k4jyNQqkr9qS31ysoY/yIKE=
+  dependencies:
+    container-query-toolkit "^0.1.3"
+    resize-observer-lite "^0.2.3"
+    vue "^2.5.17"
+
+vue-copy-to-clipboard@^1.0.3:
+  version "1.0.3"
+  resolved "http://43.239.120.231:11381/repository/npm/vue-copy-to-clipboard/-/vue-copy-to-clipboard-1.0.3.tgz#b415302b343b9185add4fc579c0721a16c8e65ac"
+  integrity sha1-tBUwKzQ7kYWt1PxXnAchoWyOZaw=
+  dependencies:
+    copy-to-clipboard "^3.3.1"
+
 vue-eslint-parser@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npm.taobao.org/vue-eslint-parser/download/vue-eslint-parser-5.0.0.tgz#00f4e4da94ec974b821a26ff0ed0f7a78402b8a1"
@@ -10399,6 +10533,11 @@ vue-template-es2015-compiler@^1.6.0, vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
+
+vue@^2.5.17:
+  version "2.6.12"
+  resolved "http://43.239.120.231:11381/repository/npm/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
+  integrity sha1-9evU+mvShpQD4pqJau1JBEVskSM=
 
 vuex@^3.0.1:
   version "3.6.0"
@@ -10643,6 +10782,11 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3, whatwg-encoding@^1.0.5:
   integrity sha1-WrrPd3wyFmpR0IXWtPPn0nET3bA=
   dependencies:
     iconv-lite "0.4.24"
+
+whatwg-fetch@>=0.10.0:
+  version "3.6.2"
+  resolved "http://43.239.120.231:11381/repository/npm/whatwg-fetch/-/whatwg-fetch-3.6.2.tgz#dced24f37f2624ed0281725d51d0e2e3fe677f8c"
+  integrity sha1-3O0k838mJO0CgXJdUdDi4/5nf4w=
 
 whatwg-mimetype@^2.1.0, whatwg-mimetype@^2.2.0, whatwg-mimetype@^2.3.0:
   version "2.3.0"

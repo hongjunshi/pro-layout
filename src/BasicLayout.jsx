@@ -79,7 +79,7 @@ const hasMixSiderMenus = (menus,topMenu) =>{
         return false
       }
       const menu = menus.find(i=> i.path === topMenu.path || i.path === topMenu.key)
-      if(menu && menu.children &&menu.children.length>0){
+      if (menu && menu.children &&menu.children.length>0){
         return true
       }else{
         return false
@@ -121,7 +121,6 @@ const BasicLayout = {
     const hasSiderMenu = !isTopMenu
     // If it is a fix menu, calculate padding
     // don't need padding in phone mode
-    console.log('multiTab=',multiTab)
     const hasLeftPadding = fixSiderbar && !isTopMenu &&(!isMix ||hasMixSiderMenus(menus,topMenu)) && !isMobile
     const cdProps = {
       ...props,
