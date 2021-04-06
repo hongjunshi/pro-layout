@@ -59,7 +59,7 @@ import { i18nRender } from '../locales'
 import { MULTI_TAB } from '../store/mutation-types'
 import defaultSettings from '@/config/defaultSettings'
 import { CONTENT_WIDTH_TYPE } from '@/store/mutation-types'
-import RouteView from '../../../src/components/RouteView'
+import { RouteView } from '@ant-design-vue/pro-layout'
 export default {
   name: 'BasicLayout',
   components: { RouteView },
