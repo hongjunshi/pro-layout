@@ -141,7 +141,8 @@ export default {
           }
           break
         case 'multiTab':
-            this.$store.commit(MULTI_TAB, value)
+          this.$store.commit(MULTI_TAB, value)
+          break
       }
     },
     handleTopMenuSelect (menu) {

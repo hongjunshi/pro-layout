@@ -33,7 +33,7 @@ const MultiTab = {
           this.$forceUpdate()
         } catch (e) {}
       })
-    this.$watch('$route', (newVal) => {
+    this.$watch('$route', newVal => {
       console.log(newVal)
       this.activeKey = newVal.fullPath
       if (this.fullPathList.indexOf(newVal.fullPath) < 0) {
@@ -42,7 +42,7 @@ const MultiTab = {
       }
       this.addCachedView(newVal)
     })
-    this.$watch('activeKey', (newPathKey) => {
+    this.$watch('activeKey', newPathKey => {
       console.log('activeKey=',newPathKey)
       this.$router.push({ path: newPathKey })
     })
@@ -52,6 +52,9 @@ const MultiTab = {
     this.addCachedView(this.$route)
   },
   methods: {
+    onChange(activeKey) {
+     this.activeKey = activeKey
+    },
     onEdit(targetKey, action) {
       this[action](targetKey)
     },
@@ -186,7 +189,8 @@ const MultiTab = {
   render(h) {
     const {
       onEdit,
-      $data: { pages }
+      onChange,
+      $data: { pages },
     } = this
     const panes = pages.map(page => {
       return (
@@ -204,9 +208,9 @@ const MultiTab = {
           <a-tabs
             hideAdd
             type={'editable-card'}
-            v-model={this.activeKey}
+            v-model={ this.activeKey }
             tabBarStyle={{ background: '#FFF', margin: 0, paddingLeft: '16px', paddingTop: '1px' }}
-            {...{ on: { edit: onEdit } }}
+            {...{ on: { edit: onEdit,change:onChange } }}
           >
             {panes}
           </a-tabs>

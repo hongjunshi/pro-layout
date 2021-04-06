@@ -3734,6 +3734,15 @@ babel-plugin-jest-hoist@^26.6.2:
     "@types/babel__core" "^7.0.0"
     "@types/babel__traverse" "^7.0.6"
 
+babel-plugin-jsx-v-model@^2.0.3:
+  version "2.0.3"
+  resolved "http://43.239.120.231:11381/repository/npm/babel-plugin-jsx-v-model/-/babel-plugin-jsx-v-model-2.0.3.tgz#c396416b99cb1af782087315ae1d3e62e070f47d"
+  integrity sha1-w5ZBa5nLGveCCHMVrh0+YuBw9H0=
+  dependencies:
+    babel-plugin-syntax-jsx "^6.18.0"
+    html-tags "^2.0.0"
+    svg-tags "^1.0.0"
+
 babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.4.5:
   version "2.8.0"
   resolved "https://registry.npm.taobao.org/babel-plugin-macros/download/babel-plugin-macros-2.8.0.tgz?cache=0&sync_timestamp=1606375410875&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fbabel-plugin-macros%2Fdownload%2Fbabel-plugin-macros-2.8.0.tgz#0f958a7cc6556b1e65344465d99111a1e5e10138"
@@ -8425,6 +8434,11 @@ html-minifier@^3.2.3:
     param-case "2.1.x"
     relateurl "0.2.x"
     uglify-js "3.4.x"
+
+html-tags@^2.0.0:
+  version "2.0.0"
+  resolved "http://43.239.120.231:11381/repository/npm/html-tags/-/html-tags-2.0.0.tgz#10b30a386085f43cede353cc8fa7cb0deeea668b"
+  integrity sha1-ELMKOGCF9Dzt41PMj6fLDe7qZos=
 
 html-webpack-plugin@^3.2.0:
   version "3.2.0"
@@ -15680,6 +15694,11 @@ svg-sprite-loader@^4.1.3:
     svg-baker "^1.5.0"
     svg-baker-runtime "^1.4.7"
     url-slug "2.0.0"
+
+svg-tags@^1.0.0:
+  version "1.0.0"
+  resolved "http://43.239.120.231:11381/repository/npm/svg-tags/-/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
+  integrity sha1-WPcc7jvVGbWdSyqEO2x95krAR2Q=
 
 svg-url-loader@^2.3.2:
   version "2.3.3"
