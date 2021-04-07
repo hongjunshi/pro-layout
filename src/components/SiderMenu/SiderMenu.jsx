@@ -27,7 +27,8 @@ export const SiderMenuProps = {
   // render function or vnode
   menuHeaderRender: PropTypes.oneOfType([PropTypes.func, PropTypes.array, PropTypes.object, PropTypes.bool]),
   menuRender: PropTypes.oneOfType([PropTypes.func, PropTypes.array, PropTypes.object, PropTypes.bool]),
-  topMenu: PropTypes.object.def(null)
+  topMenu: PropTypes.object.def(null),
+  autoSplitMenus:PropTypes.bool
 }
 
 export const defaultRenderLogo = (h, logo) => {
@@ -103,7 +104,7 @@ const SiderMenu = {
     const headerDom = defaultRenderLogoAntTitle(h, {
       logo, title, menuHeaderRender, collapsed
     })
-
+    console.log('menus=',menus)
     return (menus.length>0 &&<Sider
       class={siderCls}
       breakpoint={'lg'}

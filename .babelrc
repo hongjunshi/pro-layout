@@ -4,7 +4,6 @@
             "presets": ["@babel/preset-env"],
             "plugins": [
                 "@babel/plugin-transform-runtime",
-                "jsx-v-model",
                 "transform-vue-jsx",
                 "transform-object-assign",
                 "transform-class-properties"

@@ -17,7 +17,8 @@ export const RouteMenuProps = {
   collapsed: PropTypes.bool.def(false),
   i18nRender: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]).def(false),
   layout:LayoutSettingProps.layout,
-  topMenu:PropTypes.object.def(null)
+  topMenu:PropTypes.object.def(null),
+  autoSplitMenus:PropTypes.bool
 }
 
 const httpReg = /(http|https|ftp):\/\/([\w.]+\/?)\S*/
@@ -174,6 +175,9 @@ const RouteMenu = {
   },
   created () {
     this.$watch('$route', () => {
+      this.updateMenu()
+    })
+    this.$watch('autoSplitMenus', () => {
       this.updateMenu()
     })
     this.$watch('collapsed', val => {

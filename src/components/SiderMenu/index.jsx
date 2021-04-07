@@ -44,7 +44,7 @@ const SiderMenuWrapper = {
   },
   computed:{
     siderMenus(){
-      if(this.layout==='mix'){
+      if(this.layout==='mix' && this.autoSplitMenus){
         if(!this.topMenu){
           return []
         }

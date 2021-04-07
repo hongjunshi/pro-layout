@@ -123,7 +123,7 @@ const HeaderView = {
     headerMenus(){
       if(this.layout ==='topmenu'){
        return this.menus
-      }else if(this.layout ==='mix'){
+      }else if(this.layout ==='mix' && this.autoSplitMenus){
         return this.menus.map(menu => { return {...menu, children:undefined }})
       }else{
         return []

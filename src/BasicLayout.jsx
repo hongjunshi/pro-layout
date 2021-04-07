@@ -27,6 +27,7 @@ export const BasicLayoutProps = {
   footerRender: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]).def(undefined),
   topMenu: PropTypes.object.def(null),
   multiTab: PropTypes.bool.def(false),
+  autoSplitMenus: PropTypes.bool.def(false),
 }
 
 const MediaQueryEnum = {

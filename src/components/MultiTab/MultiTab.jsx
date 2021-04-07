@@ -190,6 +190,7 @@ const MultiTab = {
     const {
       onEdit,
       onChange,
+      activeKey,
       $data: { pages },
     } = this
     const panes = pages.map(page => {
@@ -208,7 +209,7 @@ const MultiTab = {
           <a-tabs
             hideAdd
             type={'editable-card'}
-            v-model={ this.activeKey }
+            activeKey={ this.activeKey }
             tabBarStyle={{ background: '#FFF', margin: 0, paddingLeft: '16px', paddingTop: '1px' }}
             {...{ on: { edit: onEdit,change:onChange } }}
           >

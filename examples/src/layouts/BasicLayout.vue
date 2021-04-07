@@ -56,7 +56,7 @@
 <script>
 import { asyncRouterMap } from '../config/router.config'
 import { i18nRender } from '../locales'
-import { MULTI_TAB } from '../store/mutation-types'
+import { MULTI_TAB, AUTO_SPLIT_MENUS } from '../store/mutation-types'
 import defaultSettings from '@/config/defaultSettings'
 import { CONTENT_WIDTH_TYPE } from '@/store/mutation-types'
 import { RouteView } from '@ant-design-vue/pro-layout'
@@ -142,6 +142,9 @@ export default {
           break
         case 'multiTab':
           this.$store.commit(MULTI_TAB, value)
+          break
+        case 'autoSplitMenus':
+          this.$store.commit(AUTO_SPLIT_MENUS, value)
           break
       }
     },
