@@ -59,11 +59,20 @@ const renderMenuItem = (h, item, i18nRender) => {
     })
   }
   return (
-    <MenuItem key={item.path}>
-      <CustomTag {...{ props, attrs }}>
-        {renderIcon(h, meta.icon)}
-        {renderTitle(h, meta.title, i18nRender)}
-      </CustomTag>
+    <MenuItem key={item.path} class="ant-pro-badge-menu-item">
+      {meta.showBadge ? (
+        <a-badge count={meta.badgeCount}>
+          <CustomTag {...{ props, attrs }}>
+            {renderIcon(h, meta.icon)}
+            {renderTitle(h, meta.title, i18nRender)}
+          </CustomTag>
+        </a-badge>
+        ) : (
+        <CustomTag {...{ props, attrs }}>
+          {renderIcon(h, meta.icon)}
+          {renderTitle(h, meta.title, i18nRender)}
+        </CustomTag>
+      )}
     </MenuItem>
   )
 }

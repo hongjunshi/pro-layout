@@ -27,7 +27,9 @@ const asyncRouterMap = [
             meta: {
               keepAlive: true,
               icon: 'smile',
-              title: 'menu.dashboard.analysis'
+              title: 'menu.dashboard.analysis',
+              showBadge: true,
+              badgeCount: 5
             },
             component: () => import(/* webpackChunkName: "dashboard" */ '../views/dashboard/analysis')
           },
@@ -93,7 +95,9 @@ const asyncRouterMap = [
         meta: {
           keepAlive: true,
           title: 'menu.nav1',
-          icon: 'smile'
+          icon: 'smile',
+          showBadge: true,
+          badgeCount: 5
         },
         component: () => import(/* webpackChunkName: "about" */ '../views/TestPage1')
       },
