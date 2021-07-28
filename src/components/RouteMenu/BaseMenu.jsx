@@ -45,6 +45,7 @@ const renderSubMenu = (h, item, i18nRender) => {
 
 const renderMenuItem = (h, item, i18nRender) => {
   const meta = Object.assign({}, item.meta)
+  const badge = Object.assign({}, item.meta.badge)
   const target = meta.target || null
   const hasRemoteUrl = httpReg.test(item.path)
   const CustomTag = target && 'a' || 'router-link'
@@ -58,10 +59,11 @@ const renderMenuItem = (h, item, i18nRender) => {
       cd.meta = Object.assign(cd.meta || {}, { hidden: true })
     })
   }
+  const badgeColor = badge.count === undefined ? badge.color : null
   return (
     <MenuItem key={item.path} class="ant-pro-badge-menu-item">
       {meta.showBadge ? (
-        <a-badge count={meta.badgeCount}>
+        <a-badge count={badge.count} dot={badge.count === undefined} color={badgeColor}>
           <CustomTag {...{ props, attrs }}>
             {renderIcon(h, meta.icon)}
             {renderTitle(h, meta.title, i18nRender)}

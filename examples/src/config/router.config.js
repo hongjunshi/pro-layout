@@ -29,7 +29,10 @@ const asyncRouterMap = [
               icon: 'smile',
               title: 'menu.dashboard.analysis',
               showBadge: true,
-              badgeCount: 5
+              badge: {
+                count: 5,
+                color: '#108ee9'
+              }
             },
             component: () => import(/* webpackChunkName: "dashboard" */ '../views/dashboard/analysis')
           },
@@ -40,7 +43,11 @@ const asyncRouterMap = [
               global: true,
               keepAlive: true,
               icon: 'smile',
-              title: 'menu.dashboard.workplace'
+              title: 'menu.dashboard.workplace',
+              showBadge: true,
+              badge: {
+                color: '#108ee9'
+              }
             },
             component: () => import(/* webpackChunkName: "dashboard" */ '../views/dashboard/workplace')
           }
@@ -96,8 +103,7 @@ const asyncRouterMap = [
           keepAlive: true,
           title: 'menu.nav1',
           icon: 'smile',
-          showBadge: true,
-          badgeCount: 5
+          showBadge: true
         },
         component: () => import(/* webpackChunkName: "about" */ '../views/TestPage1')
       },
