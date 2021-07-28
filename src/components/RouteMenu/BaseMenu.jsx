@@ -44,6 +44,26 @@ const renderSubMenu = (h, item, i18nRender) => {
 }
 
 const renderMenuItem = (h, item, i18nRender) => {
+  return (
+    <MenuItem key={item.path} class="ant-pro-badge-menu-item">
+      {item.meta.showBadge ? renderBadgeMenuItem(h, item, i18nRender) : renderMenuItemTag(h, item, i18nRender)}
+    </MenuItem>
+  )
+}
+
+const renderBadgeMenuItem = (h, item, i18nRender) => {
+  let badge = Object.assign({}, item.meta.badge)
+  if (!badge.count && !badge.color) {
+    badge.color = '#f5222d'
+  }
+  return (
+    <a-badge {...{ props: badge }}>
+      {renderMenuItemTag(h, item, i18nRender)}
+    </a-badge>
+  )
+}
+
+const renderMenuItemTag = (h, item, i18nRender) => {
   const meta = Object.assign({}, item.meta)
   const badge = Object.assign({}, item.meta.badge)
   const target = meta.target || null
@@ -59,23 +79,11 @@ const renderMenuItem = (h, item, i18nRender) => {
       cd.meta = Object.assign(cd.meta || {}, { hidden: true })
     })
   }
-  const badgeColor = badge.count === undefined ? badge.color : null
   return (
-    <MenuItem key={item.path} class="ant-pro-badge-menu-item">
-      {meta.showBadge ? (
-        <a-badge count={badge.count} dot={badge.count === undefined} color={badgeColor}>
-          <CustomTag {...{ props, attrs }}>
-            {renderIcon(h, meta.icon)}
-            {renderTitle(h, meta.title, i18nRender)}
-          </CustomTag>
-        </a-badge>
-        ) : (
-        <CustomTag {...{ props, attrs }}>
-          {renderIcon(h, meta.icon)}
-          {renderTitle(h, meta.title, i18nRender)}
-        </CustomTag>
-      )}
-    </MenuItem>
+    <CustomTag {...{ props, attrs }}>
+      {renderIcon(h, meta.icon)}
+      {renderTitle(h, meta.title, i18nRender)}
+    </CustomTag>
   )
 }
 
