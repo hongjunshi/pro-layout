@@ -1,0 +1,18 @@
+@import "~ant-design-vue/es/style/themes/default";
+
+@badge-menu-item-prefix-cls: ~'@{ant-prefix}-pro-badge-menu-item';
+
+.@{badge-menu-item-prefix-cls} {
+  .ant-badge {
+    width: 100%;
+
+    &:hover > a {
+      color: @white;
+      cursor: pointer;
+    }
+
+    a {
+      color: rgba(255, 255, 255, 0.65);
+    }
+  }
+}
