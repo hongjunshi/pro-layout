@@ -65,6 +65,7 @@ const renderBadgeMenuItem = (h, item, i18nRender) => {
 
 const renderMenuItemTag = (h, item, i18nRender) => {
   const meta = Object.assign({}, item.meta)
+  const badge = Object.assign({}, item.meta.badge)
   const target = meta.target || null
   const hasRemoteUrl = httpReg.test(item.path)
   const CustomTag = target && 'a' || 'router-link'
