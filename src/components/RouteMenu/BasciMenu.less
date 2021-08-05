@@ -2,23 +2,61 @@
 
 @badge-menu-item-prefix-cls: ~'@{ant-prefix}-pro-badge-menu-item';
 
+.ant-menu-horizontal, .ant-menu-dark {
+  .@{badge-menu-item-prefix-cls} {
+    .ant-badge {
+
+      &:hover > a {
+        color: @white;
+      }
+
+      a {
+        color: rgba(255, 255, 255, 0.65);
+      }
+    }
+  }
+}
+.ant-menu-light {
+  .@{badge-menu-item-prefix-cls} {
+    .ant-badge {
+
+      &:hover > a {
+        color: @primary-color;
+      }
+
+      .router-link-exact-active {
+        color: @primary-color;
+      }
+    }
+  }
+}
+
 .@{badge-menu-item-prefix-cls} {
   .ant-badge {
     width: 100%;
-    line-height: 1;
+    line-height: unset;
     vertical-align: baseline;
+    display: block;
 
     &:hover > a {
-      color: @white;
       cursor: pointer;
+      display: block;
     }
 
-    a {
-      color: rgba(255, 255, 255, 0.65);
+    a::before {
+      position: absolute;
+      top: 0;
+      right: -16px;
+      bottom: 0;
+      left: 0;
+      background-color: transparent;
+      content: '';
+      z-index: 1000;
     }
 
     .ant-badge-dot, .ant-badge-count {
       box-shadow: none;
+      top: 15px;
     }
   }
 }
