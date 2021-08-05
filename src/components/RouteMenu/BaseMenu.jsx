@@ -182,6 +182,17 @@ const RouteMenu = {
       }
 
       this.collapsed ? (this.cachedOpenKeys = openKeys) : (this.openKeys = openKeys)
+    },
+    calculatePadding() {
+      // TODO: 这里有更好的解决办法来修改伪类大小，用来覆盖元素大小
+      let itemArr = document.getElementsByClassName("ant-pro-badge-menu-item")
+      for (let i = 0; i < itemArr.length; i++) {
+        let paddingLeft = itemArr[i].style.paddingLeft
+        let domA = itemArr[i].querySelector('a')
+        let a = 'left:' + paddingLeft
+        console.log(a)
+        document.styleSheets[0].addRule('a::before',a)
+      }
     }
   },
   computed: {
@@ -206,6 +217,7 @@ const RouteMenu = {
   },
   mounted () {
     this.updateMenu()
+    // this.calculatePadding()
   }
 }
 
