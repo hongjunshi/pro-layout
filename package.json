@@ -1,6 +1,6 @@
 {
-    "name": "@hangar/pro-layout",
-    "version": "1.0.9",
+    "name": "@ant-design-vue/pro-layout",
+    "version": "1.0.8-20",
     "main": "./lib/index.js",
     "module": "./es/index.js",
     "repository": {
@@ -20,7 +20,7 @@
         "lint": "eslint -c ./.eslintrc --fix --ext .jsx,.js,.vue ./src",
         "compile": "vc-tools run compile --babel-runtime",
         "test": "cross-env NODE_ENV=test jest --config .jest.js",
-        "prepublishOnly": "npm run lint && npm run test && npm run compile && np --no-cleanup --yolo --no-publish"
+        "prepublishOnly": "npm run lint && npm run test && npm run compile && np --no-cleanup --yolo --no-publish --no-release-draft"
     },
     "files": [
         "es",
