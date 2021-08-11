@@ -27,7 +27,11 @@ const asyncRouterMap = [
             meta: {
               keepAlive: true,
               icon: 'smile',
-              title: 'menu.dashboard.analysis'
+              title: 'menu.dashboard.analysis',
+              showBadge: true,
+              badge: {
+                count: 5
+              }
             },
             component: () => import(/* webpackChunkName: "dashboard" */ '../views/dashboard/analysis')
           },
@@ -38,7 +42,15 @@ const asyncRouterMap = [
               global: true,
               keepAlive: true,
               icon: 'smile',
-              title: 'menu.dashboard.workplace'
+              title: 'menu.dashboard.workplace',
+              showBadge: true,
+              badge: {
+                count: 1,
+                numberStyle: {
+                  backgroundColor: '#52c41a',
+                  color: '#999'
+                }
+              }
             },
             component: () => import(/* webpackChunkName: "dashboard" */ '../views/dashboard/workplace')
           }
@@ -93,7 +105,8 @@ const asyncRouterMap = [
         meta: {
           keepAlive: true,
           title: 'menu.nav1',
-          icon: 'smile'
+          icon: 'smile',
+          showBadge: true
         },
         component: () => import(/* webpackChunkName: "about" */ '../views/TestPage1')
       },
@@ -103,7 +116,11 @@ const asyncRouterMap = [
         meta: {
           keepAlive: true,
           title: 'menu.nav2',
-          icon: 'smile'
+          icon: 'smile',
+          showBadge: true,
+          badge: {
+            color: 'green'
+          }
         },
         component: () => import(/* webpackChunkName: "about" */ '../views/TestPage2')
       },

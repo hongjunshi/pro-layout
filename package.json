@@ -1,11 +1,14 @@
 {
     "name": "@hangar/pro-layout",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "main": "./lib/index.js",
     "module": "./es/index.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/vueComponent/pro-layout"
+        "url": "https://github.com/hongjunshi/pro-layout"
+    },
+    "publishConfig": {
+        "registry": "http://43.239.120.231:11381/repository/npm-hangar/"
     },
     "contributors": [
         "tangjinzhou <415800467@qq.com>",
