@@ -6,5 +6,6 @@ export { default as GlobalFooter } from './components/GlobalFooter'
 export { default as SettingDrawer } from './components/SettingDrawer'
 export { default as DocumentTitle } from './components/DocumentTitle'
 export { default as BaseMenu } from './components/RouteMenu'
+export { default as RouteView } from './components/RouteView'
 // func
 export { updateTheme, updateColorWeak } from './utils/dynamicTheme'
